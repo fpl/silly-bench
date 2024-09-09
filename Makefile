@@ -10,7 +10,7 @@ CFLAGS=-O3
 code: code.c
 
 code_rs: code.rs
-	-rustc -o code_rs code.rs
+	-rustc --codegen opt-level=3 -o code_rs code.rs
 
 .SUFFIXES: .java .class
 .java.class:
