@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: cpu-benchmark-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: cpu-benchmark
+        image: giuliohome/cpu-bound:benchmark
+        resources:
+          limits:
+            cpu: "8"
+            memory: "1Gi"
+          requests:
+            cpu: "8"
+            memory: "1Gi"
+        command: ["/bin/sh", "-c"]
+        args: ["./benchmark.sh"]
+      restartPolicy: Never
+  backoffLimit: 4
