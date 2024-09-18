@@ -9,5 +9,6 @@ gcc -O3 code.c -o code_gcc
 
 clang -O3 code.c -o code_clang
 
-# Uncomment to also build the container image
-# docker build -t giuliohome/cpubound:benchmark .
+# Uncomment to also build and run the container image
+# docker build -t giuliohome/cpu-bound:benchmark .
+# docker run -ti --rm giuliohome/cpu-bound:benchmark
