@@ -1,0 +1,6 @@
+# Ignore executables
+*.class
+code
+*_rs
+*_gcc
+*_clang
